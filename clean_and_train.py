@@ -101,19 +101,19 @@ def getYPredicted(y_pred):
 
 
 if __name__ == "__main__":
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print('Using device:', device)
-    print()
-
-    # Additional Info when using cuda
-    if device.type == 'cuda':
-        # torch.set_default_tensor_type(torch.cuda.FloatTensor)
-        torch.set_default_tensor_type(torch.cuda.FloatTensor)
-        torch.set_default_device(device)
-        print(torch.cuda.get_device_name(0))
-        print('Memory Usage:')
-        print('Allocated:', round(torch.cuda.memory_allocated(0) / 1024 ** 3, 1), 'GB')
-        print('Cached:   ', round(torch.cuda.memory_reserved(0) / 1024 ** 3, 1), 'GB')
+    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    # print('Using device:', device)
+    # print()
+    #
+    # # Additional Info when using cuda
+    # if device.type == 'cuda':
+    #     # torch.set_default_tensor_type(torch.cuda.FloatTensor)
+    #     torch.set_default_tensor_type(torch.cuda.FloatTensor)
+    #     torch.set_default_device(device)
+    #     print(torch.cuda.get_device_name(0))
+    #     print('Memory Usage:')
+    #     print('Allocated:', round(torch.cuda.memory_allocated(0) / 1024 ** 3, 1), 'GB')
+    #     print('Cached:   ', round(torch.cuda.memory_reserved(0) / 1024 ** 3, 1), 'GB')
 
     df = pd.read_csv("realtor-data.csv")
     df.head()

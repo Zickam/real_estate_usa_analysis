@@ -6,11 +6,8 @@ from sklearn.compose import ColumnTransformer # т.н. преобразоват�
 from sklearn.linear_model import SGDRegressor
 from sklearn.metrics import root_mean_squared_error
 import numpy as np
-import matplotlib.pyplot as plt
 import pickle
-import mlflow
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-from mlflow.models import infer_signature
 from sklearn.model_selection import GridSearchCV
 # import torch
 

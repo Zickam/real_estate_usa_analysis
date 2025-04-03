@@ -44,5 +44,14 @@ def read_root(kwargs: Data):
     return {"message": {"pred_norm": str(float(pred_norm)), "pred": str(pred)}}
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    import subprocess
+
+    with open("uvicorn.log", "w") as log:
+        process = subprocess.Popen(
+            ["uvicorn", "webserver:app", "--host", "0.0.0.0", "--port", "8002", "--workers", "2"],
+            stdout=log,
+            stderr=log,
+            text=True
+        )
+
+    print(f"Uvicorn started with PID {process.pid}")

@@ -24,6 +24,8 @@ def preprocessing_data_frame(frame, process_only: bool = False):
     if 1474557 in df.index:
         df = df.drop(1474557)
 
+    print(df.head())
+
     df = df.drop(["prev_sold_date", "status", "street", "brokered_by", "zip_code", "city"], axis=1)
     df = df.dropna()
 
